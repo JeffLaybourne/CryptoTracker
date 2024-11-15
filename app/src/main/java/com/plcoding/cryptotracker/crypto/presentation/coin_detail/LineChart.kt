@@ -183,7 +183,7 @@ fun LineChart(
                 }
             )
 
-            // VERTICAL HELPERLINES
+            // VERTICAL HELPER LINES
             if (showHelperLines) {
                 drawLine(
                     color = if (selectedDataPointIndex == index) {
@@ -265,7 +265,7 @@ fun LineChart(
                 color = style.unselectedColor
             )
 
-            // HORIZONTAL HELPERLINES
+            // HORIZONTAL HELPER LINES
             if (showHelperLines) {
                 drawLine(
                     color = style.unselectedColor,
@@ -288,7 +288,7 @@ fun LineChart(
                     // .first to offset the current index. Then multiply this
                     // offset index by 1 xLabelWidth.
                     (it - visibleDataPointsIndices.first) * xLabelWidth +
-                    xLabelWidth / 2f // plust half the xLabelWidth to center
+                    xLabelWidth / 2f // plus half the xLabelWidth to center
 
             // Interval mapping to find the exact vertical point we need to draw
             // the dataPoint.
