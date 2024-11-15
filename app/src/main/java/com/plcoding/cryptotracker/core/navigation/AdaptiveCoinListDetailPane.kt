@@ -49,6 +49,7 @@ fun AdaptiveCoinListDetailPane(
                 CoinListScreen(
                     state = state,
                     onAction = { action ->
+                        viewModel.onAction(action)
                         when (action) {
                             is CoinListAction.OnCoinClick -> {
                                 navigator.navigateTo(
