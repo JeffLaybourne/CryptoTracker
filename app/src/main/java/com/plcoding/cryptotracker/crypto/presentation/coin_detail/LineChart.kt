@@ -121,7 +121,9 @@ fun LineChart(
         // EXAMPLE: if the largest label is 99px high at 3 lines... 99 / 3 = 33.
         // It appears that TextMeasurer's TextLayoutResult does not include a .lineHeight
         // for getting a single line height.
-        val labelLineHeight = maxXLabelHeight / maxXLabelLineCount
+        val labelLineHeight = if(maxXLabelLineCount > 0) {
+            maxXLabelHeight / maxXLabelLineCount
+        } else 0
 
         // The viewPort is the chart itself within the Canvas. Because the labels and
         // padding are included inside the Canvas but are not part of the viewport,
