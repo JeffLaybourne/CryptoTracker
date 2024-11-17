@@ -146,8 +146,8 @@ fun CoinDetailScreen(
                 }
                 val amountOfVisibleDataPoints = if(labelWidth > 0) { // make sure to not divide by zero
                     // This could be made more accurate by using a callback instead
-                    // of the hardcoded 2.5.
-                    ((totalChartWidth - 2.5 * labelWidth) / labelWidth).toInt()
+                    // of the hardcoded 2.0.
+                    ((totalChartWidth - 2.0 * labelWidth) / labelWidth).toInt()
                 } else {
                     0 // no visible dataPoints
                 }
