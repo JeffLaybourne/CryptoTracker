@@ -116,11 +116,6 @@ fun CoinDetailScreen(
                     (coin.priceUsd.value * (coin.changePercent24Hr.value / 100))
                         .toDisplayableNumber()
                 val isPositive = coin.changePercent24Hr.value > 0.0
-                val contentColor = if(isPositive) {
-                    if(isSystemInDarkTheme()) Color.Green else greenBackground
-                } else {
-                    MaterialTheme.colorScheme.error
-                }
                 InfoCard(
                     title = stringResource(id = R.string.change_last_24h),
                     formattedText = absoluteChangeFormatted.formatted,
@@ -129,7 +124,11 @@ fun CoinDetailScreen(
                     } else {
                         ImageVector.vectorResource(id = R.drawable.trending_down)
                     },
-                    contentColor = contentColor
+                    contentColor = if(isPositive) {
+                        if(isSystemInDarkTheme()) Color.Green else greenBackground
+                    } else {
+                        MaterialTheme.colorScheme.error
+                    }
                 )
             }
 
